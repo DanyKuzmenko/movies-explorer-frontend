@@ -1,13 +1,14 @@
-body {
+@import url('./vendor/fonts/fonts.css');
+
+#body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #202020;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  padding: 0;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: 'Inter';
 }

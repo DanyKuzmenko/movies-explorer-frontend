@@ -1,0 +1,68 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 21px 0;
+}
+
+.navigation__empty-block {
+    width: 100px;
+}
+
+.navigation__films {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation__film-link {
+    text-decoration: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: #fff;
+    padding: 0;
+    margin: 0 16px 0 0;
+}
+
+.navigation__film-link:last-of-type {
+    margin: 0;
+}
+
+.navigation__account {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+    height: 32px;
+    border: 2px solid rgba(170, 170, 170, .2);
+    border-radius: 50px;
+    box-sizing: border-box;
+    /*добавил box-sizing, чтобы кнопка была 32px в высоту*/
+}
+
+.navigation__account-logo {
+    background-image: url("../../images/accountLogo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 14px;
+    padding: 0 7px 0 12px;
+}
+
+.navigation__account-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}

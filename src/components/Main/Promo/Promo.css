@@ -1,0 +1,21 @@
+.promo {
+    background-color: #073042;
+    max-width: 1280px;
+}
+
+.promo__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 52px;
+    color: #FFF;
+    max-width: 626px;
+    padding: 124px 0 102px 70px;
+    margin: 0;
+}
+
+.promo__image {
+    opacity: .7;
+    padding: 0 0 60px 488px;
+}

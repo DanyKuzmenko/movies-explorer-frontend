@@ -1,0 +1,78 @@
+.techs {
+    display: flex;
+    flex-direction: column;
+    background-color: #272727;
+}
+
+.techs__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    padding: 100px 0 23px 70px;
+    margin: 0;
+}
+
+.techs__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    padding: 90px 0 100px 0;
+    border-top: 1px solid #DADADA;
+}
+
+.techs__text-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.techs__text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    max-width: 460px;
+    padding: 26px 0 100px 0;
+    margin: 0;
+    color: #fff;
+}
+
+.techs__cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.techs__card {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 10px 0 0;
+    width: 90px;
+    height: 60px;
+    background-color: #303030;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.techs__card:last-of-type {
+    margin: 0;
+}

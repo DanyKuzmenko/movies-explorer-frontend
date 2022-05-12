@@ -1,0 +1,144 @@
+.about-me {
+    max-width: 1280px;
+    background-color: #202020;
+}
+
+.about-me__header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    padding: 110px 0 23px 70px;
+    margin: 0 auto;
+}
+
+.about-me__student-container {
+    max-width: 1140px;
+    padding: 66px 0 100px 0;
+    margin: 0 auto;
+    border-top: 1px solid #DADADA;
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me__text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me__student-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    color: #fff;
+    padding: 0 0 18px 0;
+    margin: 0;
+}
+
+.about-me__student-subtitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.about-me__text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    padding: 26px 0 99px 0;
+    margin: 0;
+    max-width: 600px;
+}
+
+.about-me__links {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me__link {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    text-decoration: none;
+    margin: 0;
+    padding: 0 20px 0 0;
+}
+
+.about-me__image {
+    background-image: url("../../../images/dany.jpg");
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 327px;
+    border-radius: 10px;
+    margin: 0 0 0 auto;
+    background-size: cover;
+    display: block;
+}
+
+.about-me__portfolio {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 125px 0;
+    margin: 0 auto;
+}
+
+.about-me__portfolio-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #8B8B8B;
+    padding: 0 0 50px 70px;
+    margin: 0;
+}
+
+.about-me__portfolio-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+}
+
+.about-me__portfolio-link {
+    padding: 0 0 20px 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #424242;
+    text-decoration: none;
+}
+
+.about-me__portfolio-link-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 50px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.about-me__portfolio-link-logo {
+    width: 29px;
+    background-image: url("../../../images/portfolioLink.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
