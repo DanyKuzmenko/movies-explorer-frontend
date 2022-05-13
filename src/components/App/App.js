@@ -3,7 +3,6 @@ import {Switch, Route} from "react-router-dom";
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Navigation from '../Navigation/Navigation';
 import Movies from '../Movies/Movies';
 
 function App() {
@@ -17,8 +16,8 @@ function App() {
             </Route>
             <Route path="/movies">
                 <Header />
-                <Navigation />
                 <Movies />
+                <Footer />
             </Route>
             <Route path="/saved-movies">
 

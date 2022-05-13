@@ -1,0 +1,90 @@
+.search-form {
+    max-width: 1140px;
+    padding: 70px 0 69px 0;
+    margin: 0 auto;
+}
+
+.search-form__form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2F2F2F;
+    padding: 19px 30px 19px 19px;
+    border-radius: 9px;
+}
+
+.search-form__input-logo {
+    background-image: url("../../../images/inputSearchIcon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 34px;
+    height: 34px;
+}
+
+.search-form__input {
+    max-width: 750px;
+    border: none;
+    width: 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #8B8B8B;
+    background-color: inherit;
+    outline: none;
+}
+
+.search-form__button {
+    width: 80px;
+    height: 34px;
+    background-image: url("../../../images/searchButtonIcon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #4285F4;
+    border-radius: 48px;
+    margin: 0 30px 0 0;
+    padding: 0;
+    border: none;
+}
+
+.search-form__checkbox-label {
+
+}
+
+.search-form__invisible-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    /*  Это для того, чтобы нормально отображался во весх браузерах  */
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.search-form__visible-checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 22px;
+    background-image: url("../../../images/checkboxDisabled.svg");
+    background-position: right top;
+    /*background-size: cover;*/
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.search-form__invisible-checkbox:checked + .search-form__visible-checkbox {
+    background-image: url("../../../images/checkboxActive.svg");
+    background-position: left top;
+}
+
+.search-form__text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #fff;
+    padding: 0 0 0 14px;
+    margin: 0;
+}
