@@ -1,0 +1,57 @@
+.card {
+    max-width: 270px;
+    border-radius: 10px;
+    background-color: #222222;
+}
+
+.card__image {
+    height: 151px;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: row;
+}
+
+.card__text-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 206px;
+    width: 100%;
+    margin: 0 24px 0 12px;
+}
+
+.card__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #fff;
+    padding: 14px 0 10px 0;
+    margin: 0;
+}
+
+.card__duration {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #8B8B8B;
+    padding: 0 0 14px 0;
+    margin: 0;
+}
+
+.card__button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    background-color: #313131;
+    border: 1px solid #fff;
+    margin: 14px 0 0 0;
+}
+
+.card__button_active {
+    background-color: #2BE080;
+}

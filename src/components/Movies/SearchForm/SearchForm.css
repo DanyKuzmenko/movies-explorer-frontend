@@ -13,6 +13,17 @@
     border-radius: 9px;
 }
 
+.search-form__container {
+    /*пришлось добавить контейнер, чтобы сделать справа отступ от кнопки и сделать там линию
+    Для этого сделал контейнер и ограничил ему ширину*/
+    display: flex;
+    flex-direction: row;
+    max-width: 854px;
+    width: 100%;
+    border-right: 1px solid #424242;
+    padding: 0 30px 0 0;
+}
+
 .search-form__input-logo {
     background-image: url("../../../images/inputSearchIcon.svg");
     background-repeat: no-repeat;
@@ -33,6 +44,8 @@
     color: #8B8B8B;
     background-color: inherit;
     outline: none;
+    margin: 0;
+    padding: 0;
 }
 
 .search-form__button {
@@ -43,13 +56,17 @@
     background-repeat: no-repeat;
     background-color: #4285F4;
     border-radius: 48px;
-    margin: 0 30px 0 0;
-    padding: 0;
+    margin: 0;
     border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .search-form__checkbox-label {
-
+    position: relative;
+    width: 36px;
+    height: 20px;
+    margin: 0 0 0 29px;
 }
 
 .search-form__invisible-checkbox {
@@ -62,20 +79,38 @@
 }
 
 .search-form__visible-checkbox {
-    display: inline-block;
-    vertical-align: middle;
-    width: 36px;
-    height: 22px;
-    background-image: url("../../../images/checkboxDisabled.svg");
-    background-position: right top;
-    /*background-size: cover;*/
-    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #EBEBEB;
+    border-radius: 20px;
     cursor: pointer;
+    transition: .4s;
+}
+
+.search-form__visible-checkbox:before {
+    /*здесь описываем стили круга в чекбоксе*/
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: #F5F5F5;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: .4s;
 }
 
 .search-form__invisible-checkbox:checked + .search-form__visible-checkbox {
-    background-image: url("../../../images/checkboxActive.svg");
-    background-position: left top;
+    /*здесь описываем изменение цвета чекбокса*/
+    background-color: #2BE080;
+}
+
+.search-form__invisible-checkbox:checked + .search-form__visible-checkbox:before {
+    /*здесь описываем перемешение круга в чекбоксе*/
+    transform: translateX(16px);
 }
 
 .search-form__text {
