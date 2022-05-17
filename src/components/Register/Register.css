@@ -1,9 +1,9 @@
-.login {
+.register {
     max-width: 396px;
     margin: 0 auto;
 }
 
-.login__title {
+.register__title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -14,12 +14,12 @@
     padding: 148px 0 40px 0;
 }
 
-.login__form {
+.register__form {
     display: flex;
     flex-direction: column;
 }
 
-.login__label {
+.register__label {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -30,11 +30,11 @@
     padding: 0;
 }
 
-.login__label:last-of-type {
+.register__label:last-of-type {
     padding: 24px 0 0 0;
 }
 
-.login__input {
+.register__input {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -49,11 +49,11 @@
     outline: none;
 }
 
-.login__input_error {
+.register__input_error {
     color: #EE3465;
 }
 
-.login__error {
+.register__error {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -64,9 +64,9 @@
     margin: 6px 0 0 0;
 }
 
-.login__button {
+.register__button {
     padding: 0;
-    margin: 221px 0 0 0;
+    margin: 147px 0 0 0;
     ont-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -82,7 +82,7 @@
     cursor: pointer;
 }
 
-.login__text {
+.register__text {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -94,7 +94,7 @@
     text-align: center;
 }
 
-.login__link {
+.register__link {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;

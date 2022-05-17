@@ -8,10 +8,10 @@ function Navigation() {
             {/*добавил блок div, чтобы верстка нормально отображалась. Если просто добавить <></>,
             то не будет работать. Также добавил width=100px, чтобы фильмы были посередине*/}
             <div className="navigation__films">
-                <Link className="navigation__film-link">Фильмы</Link>
-                <Link className="navigation__film-link">Сохранённые фильмы</Link>
+                <Link className="navigation__film-link" to="/movies">Фильмы</Link>
+                <Link className="navigation__film-link" to="/saved-movies">Сохранённые фильмы</Link>
             </div>
-            <Link className="navigation__account">
+            <Link className="navigation__account" to="/profile">
                 <div className="navigation__account-logo" />
                 <p className="navigation__account-text">Аккаунт</p>
             </Link>

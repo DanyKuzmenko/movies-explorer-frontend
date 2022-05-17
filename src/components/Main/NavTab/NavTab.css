@@ -17,13 +17,6 @@
     padding: 0 30px 0 0;
 }
 
-/*.navtab__link:last-child {*/
-/*    color: #000;*/
-/*    width: 76px;*/
-/*    height: 32px;*/
-/*    background-color: #3DDC84;*/
-/*}*/
-
 .navtab__button {
     border: none;
     background-color: #3DDC84;
@@ -37,4 +30,28 @@
     height: 32px;
     border-radius: 3px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .navtab {
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navtab {
+        top: 24px;
+        right: 14px;
+    }
+
+    .navtab__link {
+        padding: 0 14px 0 0;
+        font-size: 10px;
+    }
+
+    .navtab__button {
+        font-size: 10px;
+        width: 54px;
+        height: 26px;
+    }
 }

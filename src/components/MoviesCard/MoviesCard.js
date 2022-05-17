@@ -1,5 +1,5 @@
 import './MoviesCard.css';
-import cardImage from "../../../images/card.png";
+import cardImage from "../../images/card.png";
 
 function MoviesCard() {
     return (

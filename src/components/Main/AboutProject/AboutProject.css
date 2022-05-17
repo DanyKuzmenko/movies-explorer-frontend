@@ -15,7 +15,8 @@
 }
 
 .about-project__container {
-    max-width: 1140px;
+    max-width: calc(100vw - 140px);
+    width: 100%;
     margin: 0 auto;
     padding: 70px 0 110px 0;
     border-top: 1px solid #DADADA;
@@ -36,7 +37,7 @@
     line-height: 24px;
     color: #fff;
     padding: 0;
-    margin: 0 0 26px 0;
+    margin: 0 30px 26px 0;
 }
 
 .about-project__text {
@@ -47,8 +48,7 @@
     line-height: 20px;
     color: #fff;
     padding: 0;
-    margin: 0;
-    max-width: 490px;
+    margin: 0 30px 0 0;
 }
 
 .about-project__progress-bar {
@@ -56,7 +56,7 @@
     flex-direction: row;
     padding: 0 0 110px 0;
     margin: 0 auto;
-    max-width: 1140px;
+    max-width: calc(100vw - 140px);
 }
 
 .about-project__progress-container {
@@ -102,4 +102,31 @@
     color: #8B8B8B;
     margin: 14px auto 0 auto;
     padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .about-project__title {
+        padding: 90px 0 23px 50px;
+    }
+
+    .about-project__container {
+        max-width: calc(100vw - 100px);
+        padding: 70px 0 93px 0;
+    }
+
+    .about-project__text-title {
+        margin: 0 30px 22px 0;
+    }
+
+    .about-project__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about-project__progress-bar {
+        padding: 0 0 90px 0;
+        max-width: calc(100vw - 100px);
+    }
+
+
 }

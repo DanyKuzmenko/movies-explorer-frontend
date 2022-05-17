@@ -20,7 +20,7 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    max-width: 1140px;
+    max-width: calc(100vw - 140px);
     width: 100%;
     padding: 90px 0 100px 0;
     border-top: 1px solid #DADADA;
@@ -75,4 +75,28 @@
 
 .techs__card:last-of-type {
     margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .techs__title {
+        padding: 90px 0 23px 50px;
+    }
+
+    .techs__container {
+        max-width: calc(100vw - 100px);
+        padding: 80px 0 90px 0;
+    }
+
+    .techs__text {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 22px 0 83px 0;
+    }
+
+    .techs__card {
+        font-size: 12px;
+        line-height: 15px;
+        width: 84px;
+        height: 57px;
+    }
 }

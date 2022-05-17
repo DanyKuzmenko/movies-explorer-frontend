@@ -1,11 +1,14 @@
 import React from "react";
 import './Header.css';
 import headerLogo from '../../images/headerLogo.svg';
+import {Link} from "react-router-dom";
 
-function Header() {
+function Header(props) {
     return (
         <header className="header">
-            <img className="header__logo" src={headerLogo} />
+            <Link to="/">
+                <img className={`header__logo ${props.logoPosition ? 'header__logo_auth' : ''}`} src={headerLogo} />
+            </Link>
         </header>
     );
 }

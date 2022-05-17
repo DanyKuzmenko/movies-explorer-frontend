@@ -10,15 +10,16 @@
     font-size: 13px;
     line-height: 16px;
     color: #8B8B8B;
-    padding: 79px 0 20px 480px;
+    padding: 79px 0 20px 0;
     margin: 0 auto;
+    text-align: center;
 }
 
 .footer__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1140px;
+    max-width: calc(100vw - 140px);
     border-top: 1px solid #424242;
     margin: 0 auto;
     padding: 20px 0;
@@ -52,4 +53,10 @@
 
 .footer__link:last-of-type {
     margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .footer__container {
+        max-width: calc(100vw - 100px);
+    }
 }
