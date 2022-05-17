@@ -100,3 +100,50 @@
         height: 57px;
     }
 }
+
+
+@media screen and (max-width: 767px) {
+    .techs {
+        background-color: #202020;
+    }
+
+    .techs__title {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 70px 0 28px 18px;
+    }
+
+    .techs__container {
+        max-width: calc(100vw - 36px);
+        padding: 60px 0 70px 0;
+        border-top: 1px solid #000;
+    }
+
+    .techs__text-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .techs__text {
+        font-size: 11px;
+        line-height: 16px;
+        padding: 24px 0 50px 0;
+    }
+
+    .techs__cards {
+        max-width: 178px;
+        flex-flow: wrap;
+    }
+
+    .techs__card {
+        font-size: 12px;
+        line-height: 15px;
+        width: 84px;
+        height: 57px;
+        margin: 0 10px 10px 0;
+    }
+
+    .techs__card:nth-of-type(2n) {
+        margin: 0 0 10px 0;
+    }
+}

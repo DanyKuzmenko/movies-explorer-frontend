@@ -62,11 +62,13 @@
 .about-project__progress-container {
     display: flex;
     flex-direction: column;
-    width: 228px;
+    max-width: 228px;
+    width: 100%;
 }
 
 .about-project__progress-container:last-child {
-    width: 912px;
+    max-width: 912px;
+    width: 100%;
 }
 
 .about-project__progress {
@@ -128,5 +130,53 @@
         max-width: calc(100vw - 100px);
     }
 
+    .about-project__progress-container {
+        max-width: 140px;
+    }
+}
 
+@media screen and (max-width: 767px) {
+    .about-project__title {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 70px 0 28px 18px;
+    }
+
+    .about-project__container {
+        max-width: calc(100vw - 36px);
+        padding: 60px 0 4px 0;
+        flex-direction: column;
+    }
+
+    .about-project__text-title {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 0 16px 0;
+    }
+
+    .about-project__text {
+        font-size: 11px;
+        line-height: 16px;
+        margin: 0 0 56px 0;
+    }
+
+    .about-project__progress-bar {
+        max-width: calc(100vw - 36px);
+        padding: 0 0 70px 0;
+    }
+
+    .about-project__progress-container {
+        max-width: 100px;
+    }
+
+    .about-project__progress {
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .about-project__progress-title {
+        font-size: 11px;
+        line-height: 13px;
+        margin: 10px auto 0 auto;
+    }
 }
