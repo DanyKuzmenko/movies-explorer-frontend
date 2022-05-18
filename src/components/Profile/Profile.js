@@ -1,26 +1,27 @@
+import React from "react";
 import './Profile.css';
 import Navigation from "../Navigation/Navigation";
 
 function Profile() {
     return (
         <main className="content">
-            <Navigation />
+            <Navigation/>
             <section className="profile">
                 <h2 className="profile__title">Привет, Даниил!</h2>
-                <div className="profile__info">
-                    <div className="profile__text-container">
-                        <h3 className="profile__data-title">Имя</h3>
-                        <p className="profile__user-data">Даниил</p>
+                <form className="profile__form">
+                    <div className="profile__inputs-container">
+                        <input className="profile__input" placeholder="Имя"/>
+                        <label className="profile__label">Даниил</label>
                     </div>
-                    <div className="profile__text-container">
-                        <h3 className="profile__data-title">E-mail</h3>
-                        <p className="profile__user-data">dankuzmenko02@yandex.ru</p>
+                    <div className="profile__inputs-container">
+                        <input className="profile__input" placeholder="E-mail"/>
+                        <label className="profile__label">dankuzmenko02@yandex.ru</label>
                     </div>
-                </div>
-                <div className="profile__container">
-                    <button className="profile__button">Редактировать</button>
-                    <button className="profile__button">Выйти из аккаунта</button>
-                </div>
+                    <button type='submit' className='profile__form-button'>Редактировать</button>
+                    {/*изменение кнопки при нажатии решил сделать, когда буду делать функциональность,
+                    поэтому стили для кнопки еще не делал*/}
+                </form>
+                <button className='profile__button'>Выйти из аккаунта</button>
             </section>
         </main>
     );

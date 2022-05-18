@@ -9,38 +9,42 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
     return (
         <Switch>
-            <Route path="/signup">
+            <Route exact path='/'>
+                <Header/>
+                <Main/>
+                <Footer/>
+            </Route>
+            <Route path='/signup'>
                 <Header
                     logoPosition={true}/>
                 <Register />
             </Route>
-            <Route path="/signin">
+            <Route path='/signin'>
                 <Header
                     logoPosition={true}/>
                 <Login/>
             </Route>
-            <Route path="/movies">
+            <Route path='/movies'>
                 <Header/>
                 <Movies/>
                 <Footer/>
             </Route>
-            <Route path="/saved-movies">
+            <Route path='/saved-movies'>
                 <Header/>
                 <SavedMovies/>
                 <Footer/>
             </Route>
-            <Route path="/profile">
+            <Route path='/profile'>
                 <Header/>
                 <Profile/>
             </Route>
-            <Route exact path="/">
-                <Header/>
-                <Main/>
-                <Footer/>
+            <Route path='*'>
+                <PageNotFound />
             </Route>
         </Switch>
     );

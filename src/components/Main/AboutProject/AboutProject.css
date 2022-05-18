@@ -67,7 +67,7 @@
 }
 
 .about-project__progress-container:last-child {
-    max-width: 912px;
+    max-width: calc(100vw - 140px);
     width: 100%;
 }
 

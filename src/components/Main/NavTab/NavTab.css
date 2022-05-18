@@ -17,6 +17,10 @@
     padding: 0 30px 0 0;
 }
 
+.navtab__link:hover {
+    opacity: .7;
+}
+
 .navtab__button {
     border: none;
     background-color: #3DDC84;
@@ -30,6 +34,10 @@
     height: 32px;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.navtab__button:hover {
+    opacity: .8;
 }
 
 @media screen and (max-width: 1024px) {

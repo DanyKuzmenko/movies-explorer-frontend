@@ -1,3 +1,5 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/Reset.css');
 @import url('./vendor/fonts/fonts.css');
 
 #body {

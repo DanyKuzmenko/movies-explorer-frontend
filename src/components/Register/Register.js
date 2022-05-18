@@ -6,10 +6,11 @@ function Register() {
     return (
         <main className="content">
             <section className="register">
-                <h2 className="register__title">Рады видеть!</h2>
+                <h2 className="register__title">Добро пожаловать!</h2>
                 <form className="register__form">
                     <label className="register__label">Имя</label>
                     <input className="register__input"/>
+                    {/*не делал placeholder для инпутов, потому что на макете не было*/}
                     <span className="register__error"></span>
                     <label className="register__label">E-mail</label>
                     <input className="register__input" type="email"/>

@@ -34,6 +34,7 @@
 }
 
 .error-page__link {
+    display: block;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -44,4 +45,32 @@
     text-decoration: none;
     margin: 0;
     padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .error-page__container {
+        padding: 408px 0 184px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .error-page__container {
+        padding: 329px 0 284px 0;
+    }
+
+    .error-page__title {
+        font-size: 80px;
+        line-height: 97px;
+        margin: 0 0 10px 0;
+    }
+
+    .error-page__subtitle {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .error-page__link {
+        font-size: 12px;
+        line-height: 15px;
+    }
 }

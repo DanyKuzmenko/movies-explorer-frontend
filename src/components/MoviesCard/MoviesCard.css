@@ -1,16 +1,19 @@
 .card {
-    max-width: 270px;
+    max-width: calc((100vw - 160px) / 2);
     border-radius: 10px;
     background-color: #222222;
 }
 
 .card__image {
+    max-width: calc((100vw - 160px) / 2);
+    width: 100%;
     height: 151px;
 }
 
 .card__container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .card__text-container {
@@ -18,7 +21,7 @@
     flex-direction: column;
     max-width: 206px;
     width: 100%;
-    margin: 0 24px 0 12px;
+    margin: 0 0 0 12px;
 }
 
 .card__title {
@@ -30,6 +33,10 @@
     color: #fff;
     padding: 14px 0 10px 0;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*добавляет многоточие, если строка выходит за блок*/
 }
 
 .card__duration {
@@ -44,14 +51,55 @@
 }
 
 .card__button {
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
     width: 16px;
     height: 16px;
-    border-radius: 50px;
     background-color: #313131;
-    border: 1px solid #fff;
-    margin: 14px 0 0 0;
+    margin: 14px 12px 0 0;
+    cursor: pointer;
+}
+
+.card__button:hover {
+    opacity: .8;
+}
+
+.card__button_add {
+    background-image: url("../../images/addCard.svg");
+}
+
+.card__button_delete {
+    background-image: url("../../images/deleteCard.svg");
+    background-color: inherit;
 }
 
 .card__button_active {
     background-color: #2BE080;
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        max-width: calc((100vw - 90px) / 2);
+    }
+
+    .card__image {
+        max-width: calc((100vw - 90px) / 2);
+        height: 190px;
+    }
+
+    .card__text-container {
+        margin: 0 93px 0 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        max-width: calc(100vw - 20px);
+    }
+
+    .card__image {
+        max-width: calc(100vw - 20px);
+        height: 168px;
+    }
 }

@@ -9,6 +9,10 @@
     margin: 18px 0 0 70px;
 }
 
+.header__logo:hover {
+    opacity: .8;
+}
+
 .header__logo_auth {
     margin: 70px 0 0 442px;
 }
@@ -17,10 +21,18 @@
     .header__logo {
         margin: 18px 0 0 30px;
     }
+
+    .header__logo_auth {
+        margin: 232px 0 0 186px;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .header__logo {
         margin: 18px 0 0 14px;
+    }
+
+    .header__logo_auth {
+        margin: 56px 0 0 141px;
     }
 }

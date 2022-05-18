@@ -79,6 +79,10 @@
     padding: 0 20px 0 0;
 }
 
+.about-me__link:hover {
+    opacity: .7;
+}
+
 .about-me__image {
     background-image: url("../../../images/dany.jpg");
     background-repeat: no-repeat;
@@ -123,6 +127,10 @@
     justify-content: space-between;
     border-bottom: 1px solid #424242;
     text-decoration: none;
+}
+
+.about-me__portfolio-link:hover {
+    opacity: .7;
 }
 
 .about-me__portfolio-link-text {
@@ -202,5 +210,73 @@
 
     .about-me__portfolio-link-logo {
         width: 27px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-me__title {
+        padding: 70px 0 28px 14px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .about-me__student-container {
+        max-width: calc(100vw - 28px);
+        padding: 60px 0 69px 0;
+        flex-direction: column-reverse;
+    }
+
+    .about-me__student-title {
+        font-size: 30px;
+        line-height: 36px;
+        padding: 40px 0 20px 0;
+    }
+
+    .about-me__student-subtitle {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about-me__text {
+        font-size: 11px;
+        line-height: 16px;
+        padding: 20px 0 40px 0;
+        max-width: 292px;
+    }
+
+    .about-me__link {
+        padding: 0 26px 0 0;
+    }
+
+    .about-me__image {
+        width: 292px;
+        height: 352px;
+        margin: 0 auto;
+    }
+
+    .about-me__portfolio {
+        padding: 0 0 70px 0;
+    }
+
+    .about-me__portfolio-title {
+        font-size: 14px;
+        padding: 0 0 40px 14px;
+    }
+
+    .about-me__portfolio-links {
+        max-width: calc(100vw - 28px);
+    }
+
+    .about-me__portfolio-link {
+        padding: 0 0 19px 0;
+    }
+
+    .about-me__portfolio-link-text {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .about-me__portfolio-link-logo {
+        width: 18px;
     }
 }

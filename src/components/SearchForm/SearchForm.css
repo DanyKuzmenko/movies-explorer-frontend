@@ -1,5 +1,6 @@
 .search-form {
-    max-width: 1140px;
+    max-width: calc(100vw - 140px);
+    width: 100%;
     padding: 70px 0 69px 0;
     margin: 0 auto;
 }
@@ -43,9 +44,10 @@
     line-height: 20px;
     color: #8B8B8B;
     background-color: inherit;
-    outline: none;
     margin: 0;
     padding: 0;
+    outline: none;
+    /*решил оставить outline: none, потому что так выглядит лучше*/
 }
 
 .search-form__button {
@@ -60,6 +62,14 @@
     border: none;
     padding: 0;
     cursor: pointer;
+}
+
+.search-form__button:hover {
+    opacity: .8;
+}
+
+.search-form__checkbox-container {
+    display: flex;
 }
 
 .search-form__checkbox-label {
@@ -122,4 +132,73 @@
     color: #fff;
     padding: 0 0 0 14px;
     margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .search-form {
+        max-width: calc(100vw - 60px);
+        padding: 80px 0 120px 0;
+    }
+
+    .search-form__form {
+        padding: 19px 20px 19px 19px;
+    }
+
+    .search-form__container {
+        padding: 0 19px 0 0;
+    }
+
+    .search-form__checkbox-label {
+        margin: 0 0 0 19px;
+    }
+
+    .search-form__text {
+        padding: 0 0 0 15px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .search-form {
+        max-width: calc(100vw - 20px);
+        padding: 80px 0 45px 0;
+    }
+
+    .search-form__form {
+        flex-direction: column;
+        background-color: inherit;
+        padding: 0;
+    }
+
+    .search-form__container {
+        margin: 0 0 45px 0;
+        padding: 0;
+        background-color: #2F2F2F;
+        height: 72px;
+        align-items: center;
+    }
+
+    .search-form__input-logo {
+        display: none;
+    }
+
+    .search-form__input {
+        font-size: 14px;
+        margin: 0 0 0 19px;
+    }
+
+    .search-form__button {
+        margin: 0 19px 0 0;
+        max-width: 80px;
+        width: 100%;
+    }
+
+    .search-form__checkbox-label {
+        margin: 0;
+    }
+
+    .search-form__text {
+        font-size: 11px;
+        padding: 0 0 0 13px;
+        flex-direction: unset;
+    }
 }
