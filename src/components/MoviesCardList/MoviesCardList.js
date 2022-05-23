@@ -9,7 +9,7 @@ function MoviesCardList(props) {
                 <MoviesCard deleteCard={props.deleteCard} />
                 <MoviesCard deleteCard={props.deleteCard} />
             </div>
-            <button type="button" className="movies-card-list__button">Ещё</button>
+            <button type="button" className={`${props.buttonPosition ? 'movies-card-list__button' : 'movies-card-list__button_hidden'}`}>Ещё</button>
         </section>
     );
 }

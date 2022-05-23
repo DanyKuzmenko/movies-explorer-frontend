@@ -9,7 +9,7 @@ function Movies() {
         <main className="content">
             <Navigation />
             <SearchForm />
-            <MoviesCardList />
+            <MoviesCardList buttonPosition={true} />
         </main>
     );
 }

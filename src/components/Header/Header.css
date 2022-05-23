@@ -14,7 +14,7 @@
 }
 
 .header__logo_auth {
-    margin: 70px 0 0 442px;
+    margin: 70px 0 0 calc((100vw - 396px) / 2);
 }
 
 @media screen and (max-width: 1024px) {
@@ -23,7 +23,7 @@
     }
 
     .header__logo_auth {
-        margin: 232px 0 0 186px;
+        margin: 232px 0 0 calc((100vw - 396px) / 2);
     }
 }
 
@@ -33,6 +33,13 @@
     }
 
     .header__logo_auth {
-        margin: 56px 0 0 141px;
+        margin: 56px 0 0 calc((100vw - 38px) / 2);
     }
+}
+
+@media screen and (min-width: 1281px) {
+    .header__logo_auth {
+        margin: 70px 0 0 442px;
+    }
+    /*сделал это ограничение, чтобы при большом расширении экрана header не уезжал*/
 }

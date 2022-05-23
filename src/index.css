@@ -12,5 +12,5 @@
   max-width: 1280px;
   min-width: 320px;
   margin: 0 auto;
-  font-family: 'Inter';
+  font-family: 'Inter', 'Helvetica', sans-serif;
 }

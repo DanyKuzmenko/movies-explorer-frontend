@@ -33,6 +33,10 @@
     opacity: .8;
 }
 
+.movies-card-list__button_hidden {
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
     .movies-card-list {
         max-width: calc(100vw - 60px);

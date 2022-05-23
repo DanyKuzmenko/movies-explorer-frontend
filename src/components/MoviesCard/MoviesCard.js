@@ -10,7 +10,7 @@ function MoviesCard(props) {
                         <h3 className="card__title">33 слова о дизайне</h3>
                         <p className="card__duration">1ч42м</p>
                     </div>
-                    <div className={`card__button ${props.deleteCard ? 'card__button_delete' : 'card__button_add'}`} />
+                    <button className={`card__button ${props.deleteCard ? 'card__button_delete' : ''}`} />
                 </div>
             </div>
     );

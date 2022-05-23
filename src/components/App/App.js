@@ -36,7 +36,7 @@ function App() {
             </Route>
             <Route path='/saved-movies'>
                 <Header/>
-                <SavedMovies/>
+                <SavedMovies />
                 <Footer/>
             </Route>
             <Route path='/profile'>

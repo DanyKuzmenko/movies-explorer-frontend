@@ -8,7 +8,7 @@ function SavedMovies() {
         <main className="content">
             <Navigation />
             <SearchForm />
-            <MoviesCardList deleteCard={true}/>
+            <MoviesCardList buttonPosition={false} deleteCard={true}/>
         </main>
     );
 }

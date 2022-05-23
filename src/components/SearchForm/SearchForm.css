@@ -46,8 +46,10 @@
     background-color: inherit;
     margin: 0;
     padding: 0;
-    outline: none;
-    /*решил оставить outline: none, потому что так выглядит лучше*/
+}
+
+.search-form__input:focus {
+    outline: 1px solid #424242;
 }
 
 .search-form__button {
@@ -175,6 +177,8 @@
         background-color: #2F2F2F;
         height: 72px;
         align-items: center;
+        border-radius: 9px;
+        border: none;
     }
 
     .search-form__input-logo {

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1140px;
+    max-width: calc(100vw - 140px);
     margin: 0 auto;
     padding: 21px 0;
 }
@@ -103,6 +103,7 @@
         padding: 15px 0;
         height: 44px;
         justify-content: right;
+        max-width: none;
     }
 
     .navigation__wrapper {
