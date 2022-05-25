@@ -1,0 +1,109 @@
+.card {
+    max-width: calc((100vw - 160px) / 2);
+    border-radius: 10px;
+    background-color: #222222;
+}
+
+.card__image {
+    max-width: calc((100vw - 160px) / 2);
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 151px;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card__text-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 206px;
+    width: 100%;
+    margin: 0 0 0 12px;
+}
+
+.card__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #fff;
+    padding: 14px 0 10px 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*добавляет многоточие, если строка выходит за блок*/
+}
+
+.card__duration {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #8B8B8B;
+    padding: 0 0 14px 0;
+    margin: 0;
+}
+
+.card__button {
+    background-image: url("../../images/cardButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    background-color: inherit;
+    width: 16px;
+    height: 24px;
+    margin: 14px 12px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.card__button:hover {
+    opacity: .8;
+}
+
+.card__button_delete {
+    background-image: url("../../images/cardButtonDelete.svg")
+}
+
+.card__button_active {
+    background-image: url("../../images/cardButtonActive.svg")
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        max-width: calc((100vw - 90px) / 2);
+    }
+
+    .card__image {
+        max-width: calc((100vw - 90px) / 2);
+        height: 190px;
+    }
+
+    .card__text-container {
+        margin: 0 93px 0 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        max-width: calc(100vw - 20px);
+    }
+
+    .card__image {
+        max-width: calc(100vw - 20px);
+        height: 168px;
+    }
+
+    .card__text-container {
+        margin: 0 54px 0 12px;
+    }
+}

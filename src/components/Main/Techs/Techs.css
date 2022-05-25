@@ -1,0 +1,149 @@
+.techs {
+    display: flex;
+    flex-direction: column;
+    background-color: #272727;
+}
+
+.techs__title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #fff;
+    padding: 100px 0 23px 70px;
+    margin: 0;
+}
+
+.techs__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: calc(100vw - 140px);
+    width: 100%;
+    padding: 90px 0 100px 0;
+    border-top: 1px solid #DADADA;
+}
+
+.techs__text-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.techs__text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    max-width: 460px;
+    padding: 26px 0 100px 0;
+    margin: 0;
+    color: #fff;
+}
+
+.techs__cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.techs__card {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0 10px 0 0;
+    width: 90px;
+    height: 60px;
+    background-color: #303030;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.techs__card:last-of-type {
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .techs__title {
+        padding: 90px 0 23px 50px;
+    }
+
+    .techs__container {
+        max-width: calc(100vw - 100px);
+        padding: 80px 0 90px 0;
+    }
+
+    .techs__text {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 22px 0 83px 0;
+    }
+
+    .techs__card {
+        font-size: 12px;
+        line-height: 15px;
+        width: 84px;
+        height: 57px;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .techs {
+        background-color: #202020;
+    }
+
+    .techs__title {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 70px 0 28px 18px;
+    }
+
+    .techs__container {
+        max-width: calc(100vw - 36px);
+        padding: 60px 0 70px 0;
+        border-top: 1px solid #000;
+    }
+
+    .techs__text-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .techs__text {
+        font-size: 11px;
+        line-height: 16px;
+        padding: 24px 0 50px 0;
+    }
+
+    .techs__cards {
+        max-width: 178px;
+        flex-flow: wrap;
+    }
+
+    .techs__card {
+        font-size: 12px;
+        line-height: 15px;
+        width: 84px;
+        height: 57px;
+        margin: 0 10px 10px 0;
+    }
+
+    .techs__card:nth-of-type(2n) {
+        margin: 0 0 10px 0;
+    }
+}

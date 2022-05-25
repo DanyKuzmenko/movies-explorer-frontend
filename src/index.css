@@ -1,0 +1,16 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/Reset.css');
+@import url('./vendor/fonts/fonts.css');
+
+#body {
+  margin: 0;
+  background-color: #202020;
+}
+
+#root {
+  padding: 0;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: 'Inter', 'Helvetica', sans-serif;
+}

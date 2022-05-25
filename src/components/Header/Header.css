@@ -1,0 +1,45 @@
+.header {
+    position: absolute;
+    max-width: 1140px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.header__logo {
+    margin: 18px 0 0 70px;
+}
+
+.header__logo:hover {
+    opacity: .8;
+}
+
+.header__logo_auth {
+    margin: 70px 0 0 calc((100vw - 396px) / 2);
+}
+
+@media screen and (max-width: 1024px) {
+    .header__logo {
+        margin: 18px 0 0 30px;
+    }
+
+    .header__logo_auth {
+        margin: 232px 0 0 calc((100vw - 396px) / 2);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__logo {
+        margin: 18px 0 0 14px;
+    }
+
+    .header__logo_auth {
+        margin: 56px 0 0 calc((100vw - 38px) / 2);
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .header__logo_auth {
+        margin: 70px 0 0 442px;
+    }
+    /*сделал это ограничение, чтобы при большом расширении экрана header не уезжал*/
+}
