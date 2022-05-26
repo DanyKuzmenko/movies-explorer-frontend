@@ -12,6 +12,12 @@ import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
+
+    function handleRegisterSubmit(formData) {
+        const { name, email, password } = formData;
+        console.log(name, email, password);
+    }
+
     return (
         <Switch>
             <Route exact path='/'>
@@ -21,8 +27,11 @@ function App() {
             </Route>
             <Route path='/signup'>
                 <Header
-                    logoPosition={true}/>
-                <Register />
+                    logoPosition={true}
+                />
+                <Register
+                    onRegister={handleRegisterSubmit}
+                />
             </Route>
             <Route path='/signin'>
                 <Header
