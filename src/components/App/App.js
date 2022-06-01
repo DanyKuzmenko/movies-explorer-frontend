@@ -18,6 +18,8 @@ function App() {
         console.log(name, email, password);
     }
 
+
+
     return (
         <Switch>
             <Route exact path='/'>
@@ -40,7 +42,7 @@ function App() {
             </Route>
             <Route path='/movies'>
                 <Header/>
-                <Movies/>
+                <Movies />
                 <Footer/>
             </Route>
             <Route path='/saved-movies'>
