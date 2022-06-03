@@ -6,12 +6,56 @@ import login from "../Login/Login";
 function MoviesCardList(props) {
     const [maxEl, setMaxEl] = React.useState(12);
     const [visibleFilms, setVisibleFilms] = React.useState([]);
+    const [width, setWidth] = React.useState(1280);
 
-    React.useEffect(() => {
+    React.useEffect(() => { // эффект, который устанавливает начальное количество фильмов,
+        // в зависимости от разрешения экрана
+        handleSubscribe();
+        if (width < 767) {
+            setDefaultFilms(5);
+        } else if (width < 1025) {
+            setDefaultFilms(6)
+        } else if (width < 1280) {
+            setDefaultFilms(9);
+        } else {
+            setDefaultFilms(12);
+        }
+    }, [props.foundFilms, width])
+
+    React.useEffect(() => { // эффект, который отслеживает максимальное количество фильмов и в зависимости
+        // от значения, устанавливает видимые фильмы
         setFilms();
-    }, [props.foundFilms, maxEl])
+    }, [maxEl])
 
-    function setFilms() {
+    React.useEffect(() => { // эффект, который отслеживает разрешение экрана
+        onSubscribe();
+        return () => offSubscribe;
+    }, [])
+
+    function handleSubscribe() { // функция, которая записывает разрешение экрана в переменную
+        setWidth(window.innerWidth);
+    }
+
+    function onSubscribe() {
+        window.addEventListener('resize', handleSubscribe);
+    }
+
+    function offSubscribe() {
+        window.removeEventListener('resize', handleSubscribe);
+    }
+
+    function setDefaultFilms(count) { // функция, которая устанавливает начальное количество фильмов
+        setMaxEl(count);
+        let films = [];
+        props.foundFilms.forEach((item, i) => {
+            if (i < count) {
+                films.push(item);
+            }
+        })
+        setVisibleFilms(films);
+    }
+
+    function setFilms() { // функция, которая устанавливает новое количество фильмов
         let films = [];
         props.foundFilms.forEach((item, i) => {
             if (i < maxEl) {
@@ -22,7 +66,15 @@ function MoviesCardList(props) {
     }
 
     function handleButtonClick() {
-        setMaxEl(maxEl + 4);
+        if (width < 768) {
+            setMaxEl(maxEl + 5);
+        } else if (width < 1025) {
+            setMaxEl(maxEl + 2)
+        } else if (width < 1280) {
+            setMaxEl(maxEl + 3);
+        } else {
+            setMaxEl(maxEl + 4);
+        }
     }
 
     return (
