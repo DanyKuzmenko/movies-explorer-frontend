@@ -60,6 +60,7 @@
 
     .movies-card-list__cards {
         gap: 20px;
+        grid-template-columns: 1fr;
     }
 
     .movies-card-list__button {

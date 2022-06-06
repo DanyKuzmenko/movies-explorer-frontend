@@ -7,12 +7,18 @@ function SearchForm(props) {
     const [isValid, setValidity] = React.useState(false);
     const [error, setError] = React.useState('');
 
+    React.useEffect(() => { // эффект, который устанавливает значения полей input и checkbox, если они сохранены в памяти
+        if (localStorage.getItem('filmName')) {
+            setInputData(localStorage.getItem('filmName'));
+            setCheckbox(JSON.parse(localStorage.getItem('checkboxStatus')));
+        }
+    }, [])
+
     function handleInputChange(e) {
         const input = e.target;
         setInputData(input.value);
         setValidity(input.validity.valid);
-        setError('');
-        // Ошибки очищаются при вводе чего либо
+        setError(''); // Ошибки очищаются при вводе чего либо
     }
 
     function handleCheckboxChange() {
@@ -26,7 +32,6 @@ function SearchForm(props) {
         } else {
             setError('Нужно ввести ключевое слово');
         }
-
     }
 
     return (

@@ -27,11 +27,11 @@
     line-height: 12px;
     color: #8B8B8B;
     margin: 0;
-    padding: 0;
+    padding: 24px 0 0 0;
 }
 
-.register__label:last-of-type {
-    padding: 24px 0 0 0;
+.register__label:first-of-type {
+    padding: 0;
 }
 
 .register__input {
@@ -67,9 +67,22 @@
     margin: 6px 0 0 0;
 }
 
+.register__button-error {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+    padding: 0 0 0 0;
+    height: 10px;
+    margin: 125px 0 10px 0;
+    text-align: center;
+}
+
 .register__button {
     padding: 0;
-    margin: 147px 0 0 0;
+    margin: 0;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -87,6 +100,11 @@
 
 .register__button:hover {
     opacity: .8;
+}
+
+.register__button_disabled {
+    background-color: #F8F8F8;
+    color: #C2C2C2;
 }
 
 .register__text {
@@ -122,8 +140,8 @@
         padding: 310px 0 40px 0;
     }
 
-    .register__button {
-        margin: 134px 0 0 0;
+    .register__button-error {
+        margin: 114px 0 10px 0;
     }
 }
 
@@ -137,8 +155,8 @@
         text-align: center;
     }
 
-    .register__button {
-        margin: 222px 0 0 0;
+    .register__button-error {
+        margin: 202px 0 10px 0;
     }
 
     .register__text {

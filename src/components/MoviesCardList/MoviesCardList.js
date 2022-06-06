@@ -1,7 +1,6 @@
 import React from "react";
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import login from "../Login/Login";
 
 function MoviesCardList(props) {
     const [maxEl, setMaxEl] = React.useState(12);
@@ -23,7 +22,7 @@ function MoviesCardList(props) {
     }, [props.foundFilms, width])
 
     React.useEffect(() => { // эффект, который отслеживает максимальное количество фильмов и в зависимости
-        // от значения, устанавливает видимые фильмы
+                                    // от значения, устанавливает видимые фильмы
         setFilms();
     }, [maxEl])
 
@@ -36,12 +35,16 @@ function MoviesCardList(props) {
         setWidth(window.innerWidth);
     }
 
-    function onSubscribe() {
-        window.addEventListener('resize', handleSubscribe);
+    function onSubscribe() { // добавил ограничение по времени, чтобы не перегружать приложение
+        window.addEventListener('resize', function (){
+            setTimeout(handleSubscribe, 1000);
+        });
     }
 
     function offSubscribe() {
-        window.removeEventListener('resize', handleSubscribe);
+        window.removeEventListener('resize', function (){
+            setTimeout(handleSubscribe, 1000);
+        });
     }
 
     function setDefaultFilms(count) { // функция, которая устанавливает начальное количество фильмов
@@ -65,7 +68,7 @@ function MoviesCardList(props) {
         setVisibleFilms(films);
     }
 
-    function handleButtonClick() {
+    function handleButtonClick() { // в зависимости от разрешения экрана, добавляется различное количество фильмов
         if (width < 768) {
             setMaxEl(maxEl + 5);
         } else if (width < 1025) {
@@ -82,10 +85,11 @@ function MoviesCardList(props) {
             <div className="movies-card-list__cards">
                 {visibleFilms.map(item => (
                     <MoviesCard
-                        cardImage={item.image.url}
-                        name={item.nameRU}
-                        duration={item.duration}
+                        card={item}
                         key={item.id}
+                        savedFilms={props.savedFilms}
+                        saveMovie={props.saveMovie}
+                        deleteMovie={props.deleteMovie}
                     />
                 ))}
             </div>
