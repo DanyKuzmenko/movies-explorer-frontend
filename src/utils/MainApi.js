@@ -1,5 +1,4 @@
-export const MAIN_URL = 'http://localhost:3000';
-// 'https://api.dankuzmenko.movies.nomoredomains.work'
+export const MAIN_URL = 'https://api.dankuzmenko.movies.nomoredomains.work';
 
 const _checkResponse = (response) => {
     if (response.ok) {
