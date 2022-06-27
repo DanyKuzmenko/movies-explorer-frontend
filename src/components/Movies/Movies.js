@@ -3,25 +3,42 @@ import './Movies.css';
 import Navigation from "../Navigation/Navigation";
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
-import Preloader from "./Preloader/Preloader";
+import Preloader from "../Preloader/Preloader";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import SearchError from "../SearchError/SearchError";
 
 function Movies(props) {
 
     return (
-        <main className="content">
-            <Navigation />
-            <SearchForm onSearch={props.onSearch} />
-            {localStorage.getItem('foundFilms') ?
-                <MoviesCardList
-                    buttonPosition={true}
-                    foundFilms={props.foundFilms}
-                    cardsLoad={props.cardsLoad}
-                    savedFilms={props.savedFilms}
-                    saveMovie={props.saveMovie}
-                    deleteMovie={props.deleteMovie}
+        <>
+            <Header />
+            <main className="content">
+                <Navigation />
+                <SearchForm
+                    onSearch={props.onSearch}
+                    submitCheckbox={props.submitCheckbox}
+                    disabled={props.disabled}
                 />
-                : ''}
-        </main>
+                {props.preloaderStatus ? <Preloader /> : ''}
+                {localStorage.getItem('foundFilms') && !props.preloaderStatus && !props.searchError ?
+                    <MoviesCardList
+                        buttonPosition={true}
+                        foundFilms={props.foundFilms}
+                        savedFilms={props.savedFilms}
+                        saveMovie={props.saveMovie}
+                        deleteMovie={props.deleteMovie}
+                    />
+                    : ''}
+                {props.searchError && !props.preloaderStatus ?
+                    <SearchError
+                        handleBackButtonClick={props.handleBackButtonClick}
+                        searchError={props.searchError}
+                    />
+                    : ''}
+            </main>
+            <Footer />
+        </>
     );
 }
 

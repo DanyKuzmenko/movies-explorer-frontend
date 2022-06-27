@@ -4,6 +4,11 @@
     background-color: #222222;
 }
 
+.card__image-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .card__image {
     max-width: calc((100vw - 160px) / 2);
     width: 100%;

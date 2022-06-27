@@ -1,11 +1,13 @@
 import React from "react";
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import {useLocation} from "react-router-dom";
 
 function MoviesCardList(props) {
     const [maxEl, setMaxEl] = React.useState(12);
     const [visibleFilms, setVisibleFilms] = React.useState([]);
     const [width, setWidth] = React.useState(1280);
+    const location = useLocation();
 
     React.useEffect(() => { // эффект, который устанавливает начальное количество фильмов,
         // в зависимости от разрешения экрана
@@ -19,10 +21,13 @@ function MoviesCardList(props) {
         } else {
             setDefaultFilms(12);
         }
+        if (location.pathname === '/saved-movies') {
+            setMaxEl(101);
+        }
     }, [props.foundFilms, width])
 
     React.useEffect(() => { // эффект, который отслеживает максимальное количество фильмов и в зависимости
-                                    // от значения, устанавливает видимые фильмы
+        // от значения, устанавливает видимые фильмы
         setFilms();
     }, [maxEl])
 
@@ -36,13 +41,13 @@ function MoviesCardList(props) {
     }
 
     function onSubscribe() { // добавил ограничение по времени, чтобы не перегружать приложение
-        window.addEventListener('resize', function (){
+        window.addEventListener('resize', function () {
             setTimeout(handleSubscribe, 1000);
         });
     }
 
     function offSubscribe() {
-        window.removeEventListener('resize', function (){
+        window.removeEventListener('resize', function () {
             setTimeout(handleSubscribe, 1000);
         });
     }
@@ -80,16 +85,27 @@ function MoviesCardList(props) {
         }
     }
 
+    function handleBackButtonClick() {
+        props.handleBackButtonClick();
+    }
+
     return (
         <section className="movies-card-list">
+            {props.findFilmStatus ?
+                <div
+                    className="movies-card-list__back-button"
+                    onClick={handleBackButtonClick}
+                />
+                : ''}
             <div className="movies-card-list__cards">
                 {visibleFilms.map(item => (
                     <MoviesCard
                         card={item}
-                        key={item.id}
+                        key={item.id || item._id}
                         savedFilms={props.savedFilms}
                         saveMovie={props.saveMovie}
                         deleteMovie={props.deleteMovie}
+                        deleteCard={props.deleteCard}
                     />
                 ))}
             </div>

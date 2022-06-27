@@ -5,12 +5,21 @@ import NabTab from './NavTab/NavTab';
 import AboutProject from './AboutProject/AboutProject';
 import Techs from "./Techs/Techs";
 import AboutMe from './AboutMe/AboutMe';
+import Navigation from "../Navigation/Navigation";
 
-function Main() {
+function Main(props) {
     return (
         <main className="content">
+            {
+                props.loggedIn ? (
+                    <Navigation
+                        loggedIn={props.loggedIn}
+                    />
+                ) : (
+                    <NabTab />
+                )
+            }
             <Promo />
-            <NabTab />
             <AboutProject />
             <Techs />
             <AboutMe />

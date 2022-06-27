@@ -47,6 +47,10 @@
     padding: 0;
 }
 
+.error-page__link:hover {
+    opacity: .7;
+}
+
 @media screen and (max-width: 1024px) {
     .error-page__container {
         padding: 408px 0 184px 0;
