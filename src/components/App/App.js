@@ -88,9 +88,9 @@ function App() {
         } else {
             setCheckboxStatus(false); // Разрешаем использование чекбокса после того как нашли фильм
             localStorage.setItem('filmName', film);
-            localStorage.setItem('foundFilms', JSON.stringify(foundFilms.concat(filterFilms)));
+            localStorage.setItem('foundFilms', JSON.stringify(filterFilms));
             localStorage.setItem('checkboxStatus', JSON.stringify(checked));
-            setFoundFilms(foundFilms.concat(filterFilms));
+            setFoundFilms(filterFilms);
             setTimeout(() => setPreloaderStatus(false), 1000); // Таймер нужен, чтобы можно было увидеть загрузку
         }
     }
