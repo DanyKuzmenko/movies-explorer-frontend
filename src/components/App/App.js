@@ -1,6 +1,6 @@
 import './App.css';
 import React from "react";
-import { Switch, Route, useHistory } from "react-router-dom";
+import {Switch, Route, useHistory, Redirect} from "react-router-dom";
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -10,7 +10,7 @@ import Profile from "../Profile/Profile";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import {CurrentUserContext} from '../../contexts/CurrentUserContext';
 import * as moviesApi from "../../utils/MoviesApi";
 import * as mainApi from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
@@ -81,7 +81,7 @@ function App() {
     function handleSearchSubmit(film, checked) { // функция, которая сохраняет нужный фильм
         setSearchError('');
         setPreloaderStatus(true);
-        let filterFilms = films.filter(item => item.nameRU.toLowerCase() === film.toLowerCase());
+        let filterFilms = films.filter(item => item.nameRU.toLowerCase().includes(film.toLowerCase()));
         if (filterFilms.length === 0) {
             setTimeout(() => setPreloaderStatus(false), 1000); // Таймер нужен, чтобы можно было увидеть загрузку
             setSearchError('Ничего не найдено');
@@ -98,7 +98,7 @@ function App() {
     function handleSavedMoviesSearchSubmit(film, checked) { // функция, которая ищет нужный фильм среди сохраненных
         setSearchError('');
         setPreloaderStatus(true);
-        let findFilm = savedFilms.filter(item => item.nameRU.toLowerCase() === film.toLowerCase());
+        let findFilm = savedFilms.filter(item => item.nameRU.toLowerCase().includes(film.toLowerCase()));
         if (findFilm.length === 0) {
             setTimeout(() => setPreloaderStatus(false), 1000); // Таймер нужен, чтобы можно было увидеть загрузку
             setSearchError('Ничего не найдено');
@@ -147,7 +147,7 @@ function App() {
     }
 
     function saveMovie(movie, setCardId) { // в функцию сохранения фильма передаю не только сам фильм, но и
-                                            // фукнцию обновления стейта
+        // фукнцию обновления стейта
         mainApi.saveMovie(movie)
             .then((res) => {
                 setCardId(res._id);
@@ -213,7 +213,7 @@ function App() {
             })
     }
 
-    function handleSubmitProfileForm(name, email, setButtonError, setActiveButton, setInputsValue, setNameValue, setEmailValue) {
+    function handleSubmitProfileForm(name, email, setButtonError, setActiveButton, setInputsValue) {
         // Функция сабмита профиля
         mainApi.updateUser(name, email)
             .then((res) => {
@@ -221,12 +221,12 @@ function App() {
                 setActiveButton(false); // Делаем кнопку редактирования неактивной
                 setInputsValue(true); // Блокируем возможность вводить что-либо в инпуты
                 setCurrentUser(res); // Сохраняем измененные данные пользователя
-                setNameValue(''); // Сбрасываем значения полей инпутов
-                setEmailValue('');
             })
             .catch((err) => {
                 if (err === 409) {
                     setButtonError('Пользователь с таким email уже существует');
+                } else if (err === 400) {
+                    setButtonError('Необходимо ввести валидное значение email');
                 } else {
                     setButtonError(err);
                 }
@@ -248,6 +248,9 @@ function App() {
                     <Footer/>
                 </Route>
                 <Route path='/signup'>
+                    {loggedIn ?
+                        <Redirect to='/'/>
+                        : ''}
                     <Header
                         logoPosition={true}
                     />
@@ -256,6 +259,9 @@ function App() {
                     />
                 </Route>
                 <Route path='/signin'>
+                    {loggedIn ?
+                        <Redirect to='/'/>
+                        : ''}
                     <Header
                         logoPosition={true}/>
                     <Login
@@ -300,8 +306,9 @@ function App() {
                     setSavedFilms={setSavedFilms}
                 />
                 <Route path='*'>
-                    <PageNotFound />
+                    <PageNotFound/>
                 </Route>
+
             </Switch>
             <ProfilePopup
                 isPopupOpen={isPopupOpen}

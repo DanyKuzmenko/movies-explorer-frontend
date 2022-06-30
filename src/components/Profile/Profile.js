@@ -12,34 +12,48 @@ function Profile(props) {
     const [activeButton, setActiveButton] = React.useState(false);
     const [nameValue, setNameValue] = React.useState('');
     const [isNameValid, setIsNameValid] = React.useState(false);
+    const [isNameNew, setIsNameNew] = React.useState(false);
     const [nameError, setNameError] = React.useState('');
     const [emailValue, setEmailValue] = React.useState('');
     const [isEmailValid, setIsEmailValid] = React.useState(false);
+    const [isEmailNew, setIsEmailNew] = React.useState(false);
     const [emailError, setEmailError] = React.useState('');
     const [isButtonActive, setIsButtonActive] = React.useState(false);
     const [buttonError, setButtonError] = React.useState('');
     const history = useHistory();
 
     React.useEffect(() => {
-        if (isEmailValid && isNameValid) {
-            setIsButtonActive(true);
+        if (isEmailValid && isNameValid) { // Сначала проверяем, что оба поля валидны
+            if (isNameNew || isEmailNew) { // А потом проверяем, что хотя бы одно поле не совпадает со старым значением
+                setEmailError('');
+                setIsButtonActive(true);
+            } else {
+                setEmailError('Необходимо ввести новые данные');
+                setIsButtonActive(false);
+            }
         } else {
             setIsButtonActive(false);
         }
-    }, [isEmailValid, isNameValid])
+    }, [isEmailValid, isNameValid, isNameNew, isEmailNew])
+
+    React.useEffect(() => {
+        setNameValue(currentUser.name);
+        setEmailValue(currentUser.email);
+    }, [])
 
     function handleNameInputChange(e) {
         const input = e.target;
         setNameValue(input.value);
         setIsNameValid(input.validity.valid);
+        setButtonError('');
+        setIsNameNew(true);
         if (!isNameValid) {
             setNameError(input.validationMessage);
         } else {
             setNameError('');
         }
         if (input.value === currentUser.name) { // Проверяется условие, что новое имя пользователя не будет совпадать со старым
-            setNameError('Новое имя пользователя не должно совпадать со старым');
-            setIsNameValid(false);
+            setIsNameNew(false);
         }
     }
 
@@ -47,20 +61,24 @@ function Profile(props) {
         const input = e.target;
         setEmailValue(input.value);
         setIsEmailValid(validator.isEmail(input.value));
+        setButtonError('');
+        setIsEmailNew(true);
         if (!isEmailValid) {
-            setEmailError(input.validationMessage);
+            setEmailError('Неправильный адрес электронной почты');
         } else {
             setEmailError('');
         }
         if (input.value === currentUser.email) {
-            setEmailError('Новая почта пользователя не должна совпадать со старой');
-            setIsEmailValid(false);
+            setIsEmailNew(false);
         }
     }
 
     function handleButtonClick() {
         setInputsValue(false);
         setActiveButton(true);
+        setIsEmailValid(true); // Пришлось сделать поля валидными при нажатии кнопки. Это сделано для того, чтобы можно было
+        setIsNameValid(true);  // изменить только одно поле, даже не трогая другое. Но минус в том, что сразу будет показана ошибка
+                                    // "Необходимо ввести новые данные"
     }
 
     function submitForm(e) {
@@ -86,7 +104,6 @@ function Profile(props) {
                         <div className="profile__inputs-container">
                             <input
                                 className="profile__input"
-                                placeholder="Имя"
                                 disabled={inputsValue}
                                 onChange={handleNameInputChange}
                                 value={nameValue || ''}
@@ -101,7 +118,6 @@ function Profile(props) {
                         <div className="profile__inputs-container">
                             <input
                                 className="profile__input"
-                                placeholder="E-mail"
                                 type="email"
                                 disabled={inputsValue}
                                 onChange={handleEmailInputChange}
