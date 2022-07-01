@@ -68,9 +68,22 @@
     margin: 6px 0 0 0;
 }
 
+.login__button-error {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+    padding: 0 0 0 0;
+    height: 10px;
+    margin: 201px 0 10px 0;
+    text-align: center;
+}
+
 .login__button {
     padding: 0;
-    margin: 221px 0 0 0;
+    margin: 0;
     ont-family: 'Inter';
     font-style: normal;
     font-weight: 500;
@@ -88,6 +101,11 @@
 
 .login__button:hover {
     opacity: .8;
+}
+
+.login__button_disabled {
+    background-color: #F8F8F8;
+    color: #C2C2C2;
 }
 
 .login__text {
@@ -123,8 +141,8 @@
         padding: 310px 0 40px 0;
     }
 
-    .login__button {
-        margin: 134px 0 0 0;
+    .login__button-error {
+        margin: 114px 0 10px 0;
     }
 }
 
@@ -138,8 +156,8 @@
         text-align: center;
     }
 
-    .login__button {
-        margin: 222px 0 0 0;
+    .login__button-error {
+        margin: 202px 0 10px 0;
     }
 
     .login__text {

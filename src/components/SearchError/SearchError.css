@@ -1,0 +1,56 @@
+.search-error {
+    margin: 0 auto;
+    height: 350px; /* Сам выбирал высоту */
+    position: relative;
+    max-width: calc(100vw - 140px);
+}
+
+.search-error__back-button {
+    background-image: url("../../images/backButton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.search-error__back-button:hover {
+    opacity: .8;
+}
+
+.search-error_text {
+    margin: 0;
+    padding: 150px 0 0 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+    .search-error {
+        max-width: calc(100vw - 60px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-error {
+        height: 200px;
+        max-width: calc(100vw - 28px);
+    }
+
+    .search-error__back-button {
+        top: 5px;
+        background-image: url("../../images/backButtonMobile.svg");
+    }
+
+    .search-error_text {
+        padding: 100px 0 0 0;
+    }
+}

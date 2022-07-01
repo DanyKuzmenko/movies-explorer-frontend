@@ -7,6 +7,13 @@
     padding: 21px 0;
 }
 
+.navigation_absolute {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    left: 0;
+}
+
 .navigation__wrapper {
     width: 100%;
 }

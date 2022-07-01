@@ -2,7 +2,7 @@ import React from "react";
 import './Navigation.css';
 import {Link, useLocation} from "react-router-dom";
 
-function Navigation() {
+function Navigation(props) {
     const location = useLocation();
     const [menuStatus, setMenuStatus] = React.useState(false);
 
@@ -11,7 +11,7 @@ function Navigation() {
     }
 
     return (
-        <section className='navigation'>
+        <section className={`navigation ${props.loggedIn ? 'navigation_absolute' : ''}`}>
             <div className={`navigation__wrapper ${menuStatus ? 'navigation__wrapper_mobile' : ''}`}>
                 {/*пришлось добавить еще одну обертку, чтобы остальная часть (все, кроме бургерного меню) не двигалась*/}
                 <div className={`navigation__container ${menuStatus ? 'navigation__container_mobile' : ''}`}>
