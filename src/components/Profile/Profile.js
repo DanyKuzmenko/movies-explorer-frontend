@@ -39,7 +39,7 @@ function Profile(props) {
     React.useEffect(() => {
         setNameValue(currentUser.name);
         setEmailValue(currentUser.email);
-    }, [])
+    }, [currentUser.name, currentUser.email])
 
     function handleNameInputChange(e) {
         const input = e.target;
