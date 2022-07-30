@@ -24,5 +24,4 @@
 ### **Ссылки:**
 GitHub: https://github.com/DanyKuzmenko  
 LinkedIn: https://www.linkedin.com/in/daniil-kuzmenko-30a33822b/  
-Сайт: https://dankuzmenko.movies.nomoreparties.sbs/  
-IP: 51.250.81.126
+Сайт: https://movies-explorer-frontend-eight.vercel.app/
