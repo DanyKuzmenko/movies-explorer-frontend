@@ -1,4 +1,4 @@
-export const MAIN_URL = 'https://api.dankuzmenko.movies.nomoredomains.work';
+export const MAIN_URL = 'https://movies-dankuzmenko.herokuapp.com';
 
 const _checkResponse = (response) => {
     if (response.ok) {
